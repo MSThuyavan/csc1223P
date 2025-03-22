@@ -1,0 +1,139 @@
+
+Setting environment for using XAMPP for Windows.
+2022asp86@CL2-12 c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> SHOW databases;
++--------------------+
+| Database           |
++--------------------+
+| bfl                |
+| bookdb             |
+| company            |
+| ex1                |
+| exam               |
+| hospital           |
+| ica2               |
+| information_schema |
+| librarysystem      |
+| moviedb            |
+| mysql              |
+| parkingapp         |
+| performance_schema |
+| phpmyadmin         |
+| retailstore        |
+| student            |
+| studentdb          |
+| students           |
+| test               |
+| web                |
++--------------------+
+20 rows in set (0.049 sec)
+
+MariaDB [(none)]> create database UOV;
+Query OK, 1 row affected (0.007 sec)
+
+MariaDB [(none)]> SHOW databases;
++--------------------+
+| Database           |
++--------------------+
+| bfl                |
+| bookdb             |
+| company            |
+| ex1                |
+| exam               |
+| hospital           |
+| ica2               |
+| information_schema |
+| librarysystem      |
+| moviedb            |
+| mysql              |
+| parkingapp         |
+| performance_schema |
+| phpmyadmin         |
+| retailstore        |
+| student            |
+| studentdb          |
+| students           |
+| test               |
+| uov                |
+| web                |
++--------------------+
+21 rows in set (0.001 sec)
+
+MariaDB [(none)]> use UOV;
+Database changed
+MariaDB [UOV]> create table students(std_id CHAR(15),name VARCHAR(30),course VARCHAR(30),dob DATE,city VARCHAR(20));
+Query OK, 0 rows affected (0.018 sec)
+
+MariaDB [UOV]> DESC students;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| std_id | char(15)    | YES  |     | NULL    |       |
+| name   | varchar(30) | YES  |     | NULL    |       |
+| course | varchar(30) | YES  |     | NULL    |       |
+| dob    | date        | YES  |     | NULL    |       |
+| city   | varchar(20) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.022 sec)
+
+MariaDB [UOV]> INSERT INTO students VALUES('2022/ASP/86','Kapilan','AMC','2003-03-12','Jaffna');
+Query OK, 1 row affected (0.039 sec)
+
+MariaDB [UOV]> select * from students;
++-------------+---------+--------+------------+--------+
+| std_id      | name    | course | dob        | city   |
++-------------+---------+--------+------------+--------+
+| 2022/ASP/55 | thuyavan | AMC    | 2003-03-12 | Jaffna |
++-------------+---------+--------+------------+--------+
+1 row in set (0.003 sec)
+
+MariaDB [UOV]> INSERT INTO students VALUES('2022/ASP/86','Kapilan','AMC','2003-03-12','Jaffna');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [UOV]> select * from students;
++-------------+---------+--------+------------+--------+
+| std_id      | name    | course | dob        | city   |
++-------------+---------+--------+------------+--------+
+| 2022/ASP/55 | thuyavan | AMC    | 2003-03-12 | Jaffna |
+| 2022/ASP/55 | thuyavan | AMC    | 2003-03-12 | Jaffna |
++-------------+---------+--------+------------+--------+
+2 rows in set (0.000 sec)
+
+MariaDB [UOV]> INSERT INTO students VALUES('2022/ASP/86','Kapilan','AMC','2003-03-12','Jaffna');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [UOV]> select * from students;
++-------------+---------+--------+------------+--------+
+| std_id      | name    | course | dob        | city   |
++-------------+---------+--------+------------+--------+
+| 2022/ASP/55 | thuyavan | AMC    | 2003-03-12 | Jaffna |
+| 2022/ASP/55 | thuyavan | AMC    | 2003-03-12 | Jaffna |
+| 2022/ASP/55 | thuyavn  | AMC    | 2003-03-12 | Jaffna |
++-------------+---------+--------+------------+--------+
+3 rows in set (0.000 sec)
+
+
+
+
+
+
+
+
+
+conclusion
+
+we studied
+*how to create the database
+*how to use database
+*how to create a table
+*how to insert the table

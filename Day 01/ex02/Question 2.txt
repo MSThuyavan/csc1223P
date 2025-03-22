@@ -1,0 +1,75 @@
+
+Setting environment for using XAMPP for Windows.
+2022asp86@CL2-12 c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 10
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database UOV;
+ERROR 1007 (HY000): Can't create database 'uov'; database exists
+MariaDB [(none)]> use UOV;
+Database changed
+MariaDB [UOV]> create table Physician(physicianID VARCHAR(30),Name VARCHAR(30),Position VARCHAR(30);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [UOV]> create table Physician(physicianID VARCHAR(30),Name VARCHAR(30),Position VARCHAR(30));
+Query OK, 0 rows affected (0.030 sec)
+
+MariaDB [UOV]> DESC Physician;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| physicianID | varchar(30) | YES  |     | NULL    |       |
+| Name        | varchar(30) | YES  |     | NULL    |       |
+| Position    | varchar(30) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+3 rows in set (0.014 sec)
+
+MariaDB [UOV]> INSERT INTO Physician VALUES('1','John Dorian','Staff Internist');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [UOV]> INSERT INTO Physician VALUES('2','Elliot Reid','Attending Physician');
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [UOV]> INSERT INTO Physician VALUES('3','Elliot Reid','Attending Physician');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [UOV]> INSERT INTO Physician VALUES('4','Percival Cox','Senior attending Physician');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [UOV]> INSERT INTO Physician VALUES('5','Keith Dudemeister','MD Resident');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [UOV]> INSERT INTO Physician VALUES('6','Molty Clock','Attending Physician');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [UOV]> select * from Physician;
++-------------+-------------------+----------------------------+
+| physicianID | Name              | Position                   |
++-------------+-------------------+----------------------------+
+| 1           | John Dorian       | Staff Internist            |
+| 2           | Elliot Reid       | Attending Physician        |
+| 3           | Elliot Reid       | Attending Physician        |
+| 4           | Percival Cox      | Senior attending Physician |
+| 5           | Keith Dudemeister | MD Resident                |
+| 6           | Molty Clock       | Attending Physician        |
++-------------+-------------------+----------------------------+
+6 rows in set (0.000 sec)
+
+MariaDB [UOV]>
+
+
+
+**conclusion
+
+we studied
+
+*how to create database
+*how to create a table
+*how to insert the table
+*how to do show table
